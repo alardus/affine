@@ -50,7 +50,7 @@ For everyone wanted to change limitations on a self-hosted instance until there'
     * user_id = YOUR USER ID YOU WANT TO CHANGE (get it from 'List users with id's')
 
     ```sql
-    update user_features set feature_id = <feature id> where user_id = <user id>;
+    update user_features set feature_id = <feature id> where user_id = '<user id>';
     ```
 
 6. It is also possible to update the feature configs to change limitations like members for e.x.
