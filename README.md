@@ -2,22 +2,18 @@
 
 ## Building
 
-Download the docker compose file and change those variables to your needs:
+Download the docker compose file and create .env:
 
 ```
-- AFFINE_SERVER_HOST=<your domain>
-- AFFINE_SERVER_HTTPS=<true or false>
-- MAILER_HOST=<your smtp host>
-- MAILER_PORT=<your smtp port>
-- MAILER_USER=<your smtp username>
-- MAILER_PASSWORD=<your smtp password>
-- MAILER_SENDER=<your email address>
+cp env.example .env
 ```
+
+Edit the .env file with your own values.
 
 Build the docker container:
 
 ```bash
-docker compose up -d affine-compose.yaml
+docker compose -f affine-compose.yaml up -d
 ```
 
 ## Tune limitations on the selfhosted version
@@ -50,7 +46,7 @@ For everyone wanted to change limitations on a self-hosted instance until there'
     * user_id = YOUR USER ID YOU WANT TO CHANGE (get it from 'List users with id's')
 
     ```sql
-    update user_features set feature_id = <feature id> where user_id = <user id>;
+    update user_features set feature_id = <feature id> where user_id = '<user id>';
     ```
 
 6. It is also possible to update the feature configs to change limitations like members for e.x.
